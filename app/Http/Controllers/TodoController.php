@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\Todo;
 
 class TodoController extends Controller
 {
     public function show() {
-        $notes = DB::table('todos')->get();
+        $notes = Todo::all();
+        //$notes = DB::table('todos')->get();
         return view('todo', ['array'=>$notes]);
     }
 
