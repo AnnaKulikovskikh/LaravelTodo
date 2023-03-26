@@ -11,7 +11,7 @@
                 <li>
                     <h3>{{ $note->title }}</h3>                    
                     <p>Создан {{ $note->created_at }}</p>
-                    <p>Обнавлен {{ $note->updated_at }}</p>
+                    <p>Обновлен {{ $note->updated_at }}</p>
                     <p>Описание {{ $note->description }}</p>
 
                 </li>
