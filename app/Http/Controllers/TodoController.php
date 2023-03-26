@@ -8,15 +8,16 @@ use App\Models\Todo;
 class TodoController extends Controller
 {
     public function show() {
-        $notes = Todo::all();
+        //$notes = Todo::all();
+        $notes = Todo::paginate();
         return view('todo', ['array'=>$notes]);
     }
 
     public function add(){
         $note = new Todo;
 
-        $note->title = 'New Task7';
-        $note->description = 'bla-bla-bla7';
+        $note->title = 'New Task8';
+        $note->description = 'bla-bla-bla8';
         $note->save();
         
         return redirect('/todo');
@@ -28,6 +29,8 @@ class TodoController extends Controller
 
         $notes = Todo::paginate($id);
         dump($notes);
+        dump($notes[$id]);
+        dump($notes[$id-1]);
         return view('todo', ['array'=>[$notes[$id-1]]]);
     }
 }
